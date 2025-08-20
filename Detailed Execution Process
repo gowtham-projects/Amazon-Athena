@@ -1,0 +1,22 @@
+By using Athena to query data from the Raw Bucket and storing the querying data in another Bucket.
+
+Step 1: Create an S3 Raw Bucket1, and add the Raw Data to it
+              Create an S3 querying data Bucket2, when we query from Athena, that data will be available here.
+
+Step 2: Create Amazon Athena
+        -> Go with Trino SQL (It will immediately launch)
+        -> Query Edit Settings - Browse/provide querying data Bucket2
+
+        -> Table & Views - Create source from S3 Bucket data
+            -> Provide table name, create/provide database name, 
+                Provide input/source bucket, provide appropriate file format, and Provide Column details based on the Raw document
+       -> Create Table.
+
+We have set up the data. So, we can query the data based on a request/wish from the Raw Document.
+
+E.g.. Queries:
+Select * from tablename limit 30;
+Select count(*) from tablename;
+
+
+***THE END***
